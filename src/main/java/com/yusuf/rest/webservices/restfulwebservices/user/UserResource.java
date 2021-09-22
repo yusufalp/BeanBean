@@ -3,6 +3,8 @@ package com.yusuf.rest.webservices.restfulwebservices.user;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,7 +44,7 @@ public class UserResource {
 	// POST /users
 	// insertUser - insert a user to the list
 	@PostMapping("/users")
-	public ResponseEntity<Object> insertUser(@RequestBody User user) {
+	public ResponseEntity<Object> insertUser(@Valid @RequestBody User user) {
 		User insertedUser = service.save(user);
 		
 		// provide the location of the newly created user in the form of URI
