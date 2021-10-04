@@ -37,6 +37,19 @@
 		</dependency>
 		
 		<!-- Internationalization - i18n -->
+		
+		<!-- Receive response in XML format -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+		
+		<!-- Spring Boot & OpenAPI 3 -->
+		<dependency>
+	     	<groupId>org.springdoc</groupId>
+	      	<artifactId>springdoc-openapi-ui</artifactId>
+	      	<version>1.5.11</version>
+	   	</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
