@@ -30,6 +30,13 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		
+		<!-- Spring Boot Actuator -->
+		<!-- Access: http://localhost:8080/actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 		<!-- HATEOAS - Hypermedia as the Engine of Application State -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,11 +52,19 @@
 		</dependency>
 		
 		<!-- Spring Boot & OpenAPI 3 -->
+		<!-- Access: http://localhost:8080/swagger-ui/index.html -->
 		<dependency>
 	     	<groupId>org.springdoc</groupId>
 	      	<artifactId>springdoc-openapi-ui</artifactId>
 	      	<version>1.5.11</version>
 	   	</dependency>
+	   	
+	   	<!-- HAL Explorer -->
+	   	<!-- Access: http://localhost:8080/explorer/index.html#uri=/ -->
+	   	<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
