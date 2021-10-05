@@ -2,10 +2,17 @@ package com.yusuf.rest.webservices.restfulwebservices.user;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+@Entity
 public class User {
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2, message="Name should have at least 2 characters")
@@ -13,6 +20,10 @@ public class User {
 	
 	@Past
 	private Date birthDate;
+	
+	public User() {
+		
+	}
 	
 	public User(Integer id, String name, Date birthDate) {
 		super();
