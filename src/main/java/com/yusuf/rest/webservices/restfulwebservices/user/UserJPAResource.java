@@ -25,9 +25,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 public class UserJPAResource {
 	
 	@Autowired
-	private UserDaoService service;
-	
-	@Autowired
 	private UserRepository userRepository;
 	
 	// GET /users
@@ -61,7 +58,7 @@ public class UserJPAResource {
 	// insertUser - insert a user to the list
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> insertUser(@Valid @RequestBody User user) {
-		User insertedUser = service.save(user);
+		User insertedUser = userRepository.save(user);
 		
 		// provide the location of the newly created user in the form of URI
 		URI location = ServletUriComponentsBuilder
@@ -76,10 +73,7 @@ public class UserJPAResource {
 	
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id) {
-		User user = service.deleteById(id);
+		userRepository.deleteById(id);
 		
-		if (user == null) {
-			throw new UserNotFoundException("id-"+id);
-		}
 	}
 }
